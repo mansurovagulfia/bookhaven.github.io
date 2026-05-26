@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookHaven - Книжный магазин</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <h1 class="logo">📚 BookHaven</h1>
+            </div>
+            
+            <!-- Навигация -->
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Действия в шапке -->
+            <div class="header__actions">
+                <!-- Кнопка переключения темы -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <span class="theme-toggle__icon">🌙</span>
+                </button>
+                <!-- Кнопка корзины -->
+                <button class="cart-toggle" id="cartToggle" aria-label="Открыть корзину">
+                    <span class="cart-toggle__icon">🛒</span>
+                    <span class="cart-toggle__count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Главный экран -->
+        <section id="home" class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h2 class="hero__title">Добро пожаловать в мир книг</h2>
+                    <p class="hero__subtitle">Откройте для себя лучшие произведения современной литературы</p>
+                    <a href="#catalog" class="btn btn--primary">Смотреть каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог книг -->
+        <section id="catalog" class="catalog section">
+            <div class="container">
+                <h2 class="section__title">Наши книги</h2>
+                <p class="section__subtitle">Выберите книгу из нашей подборки</p>
+                
+                <div class="catalog__grid grid">
+                    <!-- Книга 1 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/cephieds-cassiopeia.webp" 
+                                 alt="Цефеиды. Кассиопея" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Цефеиды. Кассиопея</h3>
+                            <p class="book-card__author">Ханна Ким</p>
+                            <p class="book-card__description">Young adult роман о параллельных мирах, утрате и поиске себя</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">890 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="1" data-book-title="Цефеиды. Кассиопея" data-book-price="890">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Книга 2 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/extra-in-his-game.webp" 
+                                 alt="Лишний в его игре" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Лишний в его игре</h3>
+                            <p class="book-card__author">Алена Филипенко</p>
+                            <p class="book-card__description">История о двух одноклассниках, живущих в параллельных вселенных</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">650 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="2" data-book-title="Лишний в его игре" data-book-price="650">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Книга 3 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/witch-bookshop.webp" 
+                                 alt="Книжный магазинчик ведьмы" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Книжный магазинчик ведьмы</h3>
+                            <p class="book-card__author">Гретхен Рю</p>
+                            <p class="book-card__description">Уютное фэнтези с элементами детектива о ведьме и её коте</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">720 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="3" data-book-title="Книжный магазинчик ведьмы" data-book-price="720">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Книга 4 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/the-birds.webp" 
+                                 alt="Птица" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Птица</h3>
+                            <p class="book-card__author">Ольга Власенко</p>
+                            <p class="book-card__description">Роман о студенте Птице, который осознаёт, что он павший ангел.</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">580 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="4" data-book-title="Птица" data-book-price="580">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Книга 5 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/sluga_tigra.jpg" 
+                                 alt="Слуга тигра" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Слуга тигра</h3>
+                            <p class="book-card__author">Ло Ян, Чан Ань</p>
+                            <p class="book-card__description">Азиатское фэнтези о магистрате и загадочных убийствах</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">1 850 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="5" data-book-title="Слуга тигра" data-book-price="1850">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Книга 6 -->
+                    <article class="book-card card">
+                        <div class="book-card__image-wrapper">
+                            <img src="images/cephieds-andromeda.webp" 
+                                 alt="Цефеиды. Андромеда" 
+                                 class="book-card__image"
+                                 loading="lazy">
+                        </div>
+                        <div class="book-card__content">
+                            <h3 class="book-card__title">Цефеиды. Андромеда</h3>
+                            <p class="book-card__author">Ханна Ким</p>
+                            <p class="book-card__description">Продолжение истории о параллельных мирах и втором шансе</p>
+                            <div class="book-card__footer">
+                                <span class="book-card__price">850 ₽</span>
+                                <button class="btn btn--success book-card__btn" data-book-id="6" data-book-title="Цефеиды. Андромеда" data-book-price="850">
+                                    Купить
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- О магазине -->
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section__title">О нашем магазине</h2>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>BookHaven — это уютный книжный магазин, где каждый найдет что-то особенное. Мы тщательно подбираем книги, чтобы вы могли наслаждаться только лучшими произведениями.</p>
+                        <p>Наши преимущества:</p>
+                        <ul class="about__list">
+                            <li>✓ Только качественные издания</li>
+                            <li>✓ Быстрая доставка</li>
+                            <li>✓ Удобная система оплаты</li>
+                            <li>✓ Помощь в выборе книг</li>
+                        </ul>
+                    </div>
+                    <div class="about__features features">
+                        <div class="features__item">
+                            <span class="features__icon">📦</span>
+                            <h3>Быстрая доставка</h3>
+                            <p>Доставляем книги по всей стране</p>
+                        </div>
+                        <div class="features__item">
+                            <span class="features__icon">💰</span>
+                            <h3>Выгодные цены</h3>
+                            <p>Регулярные скидки и акции</p>
+                        </div>
+                        <div class="features__item">
+                            <span class="features__icon">❤️</span>
+                            <h3>Любовь к книгам</h3>
+                            <p>Подбираем с душой</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма обратной связи -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section__title">Свяжитесь с нами</h2>
+                <p class="section__subtitle">Есть вопросы? Заполните форму ниже</p>
+                
+                <form class="contact__form form" id="contactForm">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Ваше имя</label>
+                        <input type="text" id="name" name="name" class="form__input" required placeholder="Иван Иванов">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" name="email" class="form__input" required placeholder="example@mail.ru">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="phone" class="form__label">Телефон</label>
+                        <input type="tel" id="phone" name="phone" class="form__input" placeholder="+7 (999) 999-99-99">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="message" class="form__label">Сообщение</label>
+                        <textarea id="message" name="message" class="form__textarea" rows="5" required placeholder="Ваш вопрос или комментарий..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--full">Отправить сообщение</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__info">
+                <h3 class="footer__logo">📚 BookHaven</h3>
+                <p>Ваш любимый книжный магазин</p>
+            </div>
+            
+            <div class="footer__contacts">
+                <h4>Контакты</h4>
+                <p>📍 г. Книжный, ул. Книжечная, 15</p>
+                <p>📞 +7 (999) 123-45-67</p>
+                <p>✉️ info@bookhaven.ru</p>
+            </div>
+            
+            <div class="footer__social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#" class="social-links__item">VK</a>
+                    <a href="#" class="social-links__item">TG</a>
+                    <a href="#" class="social-links__item">OK</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__bottom">
+            <p>&copy; 2026 BookHaven.</p>
+            <p class="disclaimer">Проект носит учебный характер. Все права на книги и обложки принадлежат авторам и издательствам.</p>
+        </div>
+    </footer>
+
+    <!-- Боковая панель корзины -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h2>Корзина</h2>
+            <button class="cart-sidebar__close" id="cartClose">✕</button>
+        </div>
+        
+        <div class="cart-sidebar__content" id="cartContent">
+            <p class="cart-sidebar__empty">Корзина пуста</p>
+        </div>
+        
+        <div class="cart-sidebar__footer">
+            <div class="cart-sidebar__total">
+                <span>Итого:</span>
+                <span id="cartTotal">0 ₽</span>
+            </div>
+            <button class="btn btn--primary btn--full">Оформить заказ</button>
+        </div>
+    </aside>
+
+    <!-- Затемнение фона -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
